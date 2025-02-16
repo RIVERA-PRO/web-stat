@@ -1,0 +1,41 @@
+.videos-container{
+    display: flex;
+    flex-direction: column;
+    padding: 40px 10%;
+    gap: 2rem;
+    justify-content: center;
+}
+.videos-grap{
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+.video-item video{
+    width: 15rem;
+    height: 20rem;
+    border-radius: 10px;
+    object-fit: cover;
+   
+}
+@media (max-width: 1300px){
+    .videos-grap{
+        display: flex;
+        gap: 2rem;
+        justify-content: initial;
+        overflow-x: scroll;
+        padding: 40px 3%;
+
+    }
+    .videos-container{
+        display: flex;
+        padding: 40px 0%;
+        gap: 1rem;
+    }
+    .video-item video{
+        width: 13rem;
+        height: 17rem;
+        border-radius: 10px;
+        object-fit: cover;
+       
+    }
+}

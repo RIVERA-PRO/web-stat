@@ -1,0 +1,49 @@
+.Galery {
+    width: 100%;
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-container {
+    width: 100%;
+    
+}
+
+.swiper-card{
+    width:23rem;
+    height: 23rem;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 10px;
+}
+
+.swiper-slide img {
+    width:23rem;
+    height: 23rem;
+    border-radius: 10px;
+    object-fit: cover;
+    
+   
+}
+
+@media (max-width: 700px){
+    .swiper-card{
+        width:15rem;
+        height: 15rem;
+    }
+    
+    .swiper-slide img {
+        width:15rem;
+        height: 15rem;
+        object-fit: cover;
+        border-radius: 10px;
+        
+}
+.Galery {
+    min-height: 40vh;
+ 
+}
+
+}
