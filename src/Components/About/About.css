@@ -71,7 +71,15 @@
     border: none;
     margin-top: 1rem;
 }
-
+.About .titleSection {
+    padding: 0 20%;
+}
+.About .titleSection img{
+    width: 100%;
+    height: 100%;
+    border-radius:15px ;
+    
+}
 @media (max-width: 700px){
     .About h1{
         color: var(--color1);
@@ -82,7 +90,7 @@
         font-size: 17px;
     }
     .About{
-        padding: 50px 4%;
+        padding: 50px 0%;
        
     }
     .profileAbout{
@@ -95,5 +103,8 @@
         object-fit: cover;
         border-radius:10px ;
      
+    }
+    .About .titleSection {
+        padding: 0 0%;
     }
 }

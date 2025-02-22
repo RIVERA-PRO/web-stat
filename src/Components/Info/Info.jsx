@@ -1,10 +1,33 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Info.css';  // Asegúrate de tener el archivo CSS para los estilos
-
+import imagenes from '../imagenes';
+import Servicios from '../Servicios/Servicios';
 export default function Info() {
+    // Estado para mantener la imagen de fondo actual
+    const [imagenIndex, setImagenIndex] = useState(0);
+
+    // Efecto para cambiar la imagen cada 1 segundo
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setImagenIndex((prevIndex) => (prevIndex + 1) % imagenes?.length); // Cambia al siguiente índice
+        }, 3000); // 1000 ms = 1 segundo
+
+        return () => clearInterval(interval); // Limpieza cuando el componente se desmonta
+    }, []);
+
+    // Imagen actual
+    const imagenAleatoria = imagenes[imagenIndex];
     return (
-        <div className="info-container">
-            <section className="intro">
+        <div className="info-container"
+            style={{
+                position: 'relative',
+                width: '100%',
+                backgroundImage: `url(${imagenAleatoria})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundAttachment: 'fixed',
+            }}>
+            <section className="intro" id='blancoContenedor'>
                 <div className='titleSection'>
                     <div className='separacion2'>
                         <div></div>
@@ -19,7 +42,8 @@ export default function Info() {
                 <p className="gourmet">Pensión completa vegetariana Gourmet</p>
             </section>
 
-            <section className="hotel-info">
+            <Servicios />
+            <section className="hotel-info" id='blancoContenedor'>
                 <div className='titleSection'>
                     <div className='separacion2'>
                         <div></div>
@@ -28,14 +52,16 @@ export default function Info() {
                     <h1>HOTEL INTERNACIONAL BUZIOS ESPIRITUALIDADE</h1>
                 </div>
                 <p><strong>La estadía incluye:</strong></p>
-                <p>Habitaciones de lujo con hidromasaje</p>
-                <p>Pensión completa vegetariana gourmet</p>
-                <p>Actividades espirituales: yoga, caminatas, meditaciones</p>
-                <p>Acceso a instalaciones: piscina, sauna, bañera de hidromasaje, bar en la playa</p>
-                <p>Este retiro es ideal para quienes buscan relajarse, conectarse con la naturaleza y experimentar una transformación personal.</p>
+                <p>Habitaciones de lujo con hidromasaje para relajarte y disfrutar de la naturaleza.                </p>
+                <p>Pensión completa vegetariana gourmet  EXQUISITOS Sabores...      con 7 Desayunos, 7 Cenas y 6 Almuerzos, incluyendo Entrada, Plato Principal, Postre, agua,  y limonada.
+                </p>
+                <p>Actividades Espirituales a la mañana y a la tarde,  y meditaciones en el oratorio.
+                </p>
+                <p>Acceso a instalaciones, como Piscina al aire libre, Sauna, Bañera de Hidromasaje</p>
+                <p>Este Retiro es Ideal para Aquellos que Buscan una Estadía de Pleno Relax y Bienestar, Conectándose con la Naturaleza y su Esencia... También para Compartir en Tribu Ceremonias y Rituales para Empoderar y Anclar el Alma!!! ¡Será una Experiencia Transformadora Enriquecedora de HabitarNOS EN GRUPO de CompartirNos de Anclar LA ALEGRIA EL DISFRUTE y LA GRATITUD POR LA VIDA!!! AHO!!!</p>
             </section>
 
-            <section className="details">
+            <section className="details" id='blancoContenedor'>
                 <div className='titleSection'>
                     <div className='separacion2'>
                         <div></div>
@@ -47,17 +73,20 @@ export default function Info() {
                 <p><strong>Lugar:</strong> Búzios, Río de Janeiro, Brasil</p>
                 <p><strong>Duración:</strong> 8 días, 7 noches</p>
                 <p><strong>Incluye:</strong></p>
-                <p>Alojamiento en un lugar sagrado y natural</p>
-                <p>Comidas vegetarianas gourmet</p>
-                <p>Actividades espirituales y de crecimiento personal</p>
-                <p>Traslados desde y hasta el lugar del encuentro</p>
+                <p>Alojamiento en un Lugar Sagrado y Natural                </p>
+                <p> Comidas Vegetarianas Gourmet
+                </p>
+                <p> Actividades Espirituales y de Crecimiento Personal
+                </p>
                 <p><strong>No Incluye:</strong></p>
                 <p>Vuelos internacionales</p>
                 <p>Seguros y asistencia al viajero (opcional)</p>
-                <p>Gastos extras personales</p>
+                <p>Traslados desde aeropuerto hasta el Hotel (coordinación con transporte privado de confianza)... Excursiones en Barco ...  Gastos extras personales
+
+                </p>
             </section>
 
-            <section className="cancellation">
+            <section className="cancellation" id='blancoContenedor'>
                 <div className='titleSection'>
                     <div className='separacion2'>
                         <div></div>
@@ -66,10 +95,11 @@ export default function Info() {
                     <h1>Política de Cancelación</h1>
                 </div>
 
-                <p>La reserva del cupo y transferencias posteriores no son reembolsables en caso de no asistir.</p>
+                <p>La Reserva del cupo y transferencias posteriores no son reembolsables en caso de no asistir.
+                </p>
             </section>
 
-            <section className="additional-info">
+            <section className="additional-info" id='blancoContenedor'>
                 <div className='titleSection'>
                     <div className='separacion2'>
                         <div></div>
@@ -77,11 +107,12 @@ export default function Info() {
                     </div>
                     <h1>Información Adicional</h1>
                 </div>
-                <p>Es importante leer y aceptar los términos y condiciones antes de realizar la reserva.</p>
-                <p>Se recomienda contratar seguros de viaje y asistencia al viajero para cubrir cualquier imprevisto.</p>
+                <p>Es importante leer y aceptar los términos y condiciones antes de realizar la Reserva.
+                </p>
+                <p>Se Recomienda contratar Seguros de Viaje y Asistencia al viajero para cubrir cualquier Imprevisto...</p>
             </section>
 
-            <section className="value">
+            <section className="value" id='blancoContenedor'>
                 <div className='titleSection'>
                     <div className='separacion2'>
                         <div></div>
@@ -89,12 +120,15 @@ export default function Info() {
                     </div>
                     <h1>VALOR del INTERCAMBIO</h1>
                 </div>
-                <p><strong>1400 USD</strong> TODO INCLUIDO dentro del Retiro</p>
-                <p>Instalaciones Premium con Playa Privada, Alojamiento de Luxe, Pensión Completa Gourmet con Bebidas, Actividades Guiadas y Acompañamiento durante Todo El Retiro.</p>
-                <p><strong>SEÑA de 600 USD</strong></p>
+                <p><strong>1400 USD<br /></strong>
+                    TODO INCLUIDO dentro del Retiro
+                    Instalaciones Premium con PLAYA PRIVADA... <br /> Alojamiento de Luxe ... <br />Pensión Completa Gourmet con Bebida(agua y limonada) ... <br />Todas las Actividades Guía y Acompañamiento durante Todo El Retiro...<br />
+
+                    SEÑA de 600 USD hasta el 10 de Abril... <br />Señando hasta esa fecha la inversión será de 1200USD pasada la fecha el Importe   será de 1400USD
+                </p>
             </section>
 
-            <section className="payment">
+            <section className="payment" id='blancoContenedor'>
                 <div className='titleSection'>
                     <div className='separacion2'>
                         <div></div>
@@ -103,13 +137,16 @@ export default function Info() {
                     <h1>Opciones para la Reserva</h1>
                 </div>
 
-                <p>Dólar Billete</p>
-                <p>Transferencia en Pesos Argentinos (cotización del momento de Transferencia DÓLAR BLUE)</p>
-                <p>El saldo se entrega en DÓLAR BILLETE AZUL al momento del CHECK IN.</p>
-                <p><strong>IMPORTANTE:</strong> Los cupos son limitados, con fecha anticipada de Reserva.</p>
+                <p>DOLAR BILLETE
+                </p>
+                <p>Transferencia en Pesos Argentinos cotización del momento de Transferencia DOLAR BLUE Venta...</p>
+                <p>EL SALDO SE ENTREGA EN DOLAR BILLETE AZUL AL MOMENTO DEL CHEK IN...
+                </p>
+                <p> <strong>IMPORTANTE</strong> tener en cuenta que los Cupos son limitados con fecha anticipada de Reserva...
+                </p>
             </section>
 
-            <section className="consultation">
+            <section className="consultation" id='blancoContenedor'>
                 <div className='titleSection'>
                     <div className='separacion2'>
                         <div></div>
@@ -118,10 +155,10 @@ export default function Info() {
                     <h1>CONSULTA E INSCRIPCIÓN</h1>
                 </div>
 
-                <p>Contacta al +5493814668640 SAN</p>
+                <p>Contacta al +5493814668640 SANDRA</p>
             </section>
 
-            <section className="excursion">
+            <section className="excursion" id='blancoContenedor'>
                 <div className='titleSection'>
                     <div className='separacion2'>
                         <div></div>

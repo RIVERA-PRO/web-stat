@@ -23,7 +23,7 @@ export default function Demo() {
 
             {/* <Servicios /> */}
             <Info />
-            <Bg />
+            {/* <Bg /> */}
             <Itinerario />
             <Videos />
             <Contact />

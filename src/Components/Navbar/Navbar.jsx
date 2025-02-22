@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
 import { Link as Anchor } from 'react-router-dom';
-import logo from '../../images/logo.jpeg'
+import logo from '../../images/logo.png'
 import 'swiper/swiper-bundle.css';
 import './Navbar.css';
 import contactData from '../contact';
