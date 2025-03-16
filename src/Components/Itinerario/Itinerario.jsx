@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import imagenes from '../imagenes';
 import itinerario from '../Itinerario';
 import Modal from 'react-modal';
 import './Itinerario.css'
@@ -15,40 +16,59 @@ export default function Itinerario() {
         setSelectedDia(dia);
         setModalIsOpen(true);
     };
+    // Estado para mantener la imagen de fondo actual
+    const [imagenIndex, setImagenIndex] = useState(0);
 
+    // Efecto para cambiar la imagen cada 1 segundo
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setImagenIndex((prevIndex) => (prevIndex + 1) % imagenes?.length); // Cambia al siguiente índice
+        }, 3000); // 1000 ms = 1 segundo
+
+        return () => clearInterval(interval); // Limpieza cuando el componente se desmonta
+    }, []);
+
+    // Imagen actual
+    const imagenAleatoria = imagenes[imagenIndex];
     return (
-        <div className='Itinerario'>
+        <section id='Cronograma'
+        >
 
-            <div className='titleSection'>
+            <div className='titleSection' id='blancoContenedor'>
                 <div className='separacion'>
                     <span></span> <div></div> <span></span>
                 </div>
+                <h1 id='TITLE'>CRONORAMA POR DÍA</h1>
                 <h1>Retiro en Búzios ESPIRITUALIDADE Conexión con la Naturaleza Y EL MAR...</h1>
                 <p>El camino hacia tu transformación comienza desde el primer día. </p>
-            </div>
-            <div className='ItinerarioGrap'>
-                {itinerario.map((dia) => (
-                    <div key={dia.id} onClick={() => openModal(dia)} className='ItinerarioCard'>
-                        <img src={dia.imagenes[0]} alt='' /> {/* Solo muestra la primera imagen */}
-                        <div className='ItinerarioCardText'>
-                            <h3>{dia.dia}: {dia.titulo}</h3>
-                            {isScreenLarge ?
-                                <div>
-                                    {dia?.actividades?.slice(0, 2).map((actividad, idx) => (
-                                        <p key={idx}>{actividad.length > 40 ? actividad.slice(0, 40) + '...' : actividad}</p>
-                                    ))}
-                                </div>
-                                :
-                                <div>
-                                    {dia?.actividades?.slice(0, 2).map((actividad, idx) => (
-                                        <p key={idx}>{actividad.length > 20 ? actividad.slice(0, 20) + '...' : actividad}</p>
-                                    ))}
-                                </div>
-                            }
-                            <button>Ver más</button>
+                <div className='ItinerarioGrap'>
+                    {itinerario.map((dia) => (
+                        <div key={dia.id} onClick={() => openModal(dia)} className='ItinerarioCard'>
+                            {/* <img src={dia.imagenes[0]} alt='' />  */}
+                            <div className='ItinerarioCardText'>
+                                <h3>{dia.dia}: {dia.titulo}</h3>
+                                {/* {isScreenLarge ?
+                                    <div>
+                                        {dia?.actividades?.slice(0, 2).map((actividad, idx) => (
+                                            <p key={idx}>{actividad.length > 80 ? actividad.slice(0, 80) + '...' : actividad}</p>
+                                        ))}
+                                    </div>
+                                    :
+                                    <div>
+                                        {dia?.actividades?.slice(0, 2).map((actividad, idx) => (
+                                            <p key={idx}>{actividad.length > 20 ? actividad.slice(0, 80) + '...' : actividad}</p>
+                                        ))}
+                                    </div>
+                                } */}
+
+                                {dia?.actividades.map((actividad, idx) => (
+                                    <p >{actividad}</p>
+                                ))}
+                                {/* <button>Ver más</button> */}
+                            </div>
                         </div>
-                    </div>
-                ))}
+                    ))}
+                </div>
             </div>
 
             <Modal
@@ -86,6 +106,6 @@ export default function Itinerario() {
                     </div>
                 )}
             </Modal>
-        </div >
+        </section >
     );
 }

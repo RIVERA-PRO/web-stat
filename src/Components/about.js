@@ -1,3 +1,3 @@
-const about = 'https://web.fullweb.online/imagenes/about';
+const about = 'http://cocrearsandra.com.ar/imagenes/about.jpg';
 
 export default about;

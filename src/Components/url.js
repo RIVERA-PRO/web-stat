@@ -1,3 +1,3 @@
-const baseURL = 'https://web.fullweb.online';
+const baseURL = 'http://cocrearsandra.com.ar';
 
 export default baseURL;

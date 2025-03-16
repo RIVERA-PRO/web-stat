@@ -1,4 +1,4 @@
-const ruta = 'https://web.fullweb.online/imagenes/videos/';
+const ruta = 'http://cocrearsandra.com.ar/imagenes/videos/';
 const videos = [
     `${ruta}/video1.mp4`,
     `${ruta}/video2.mp4`,

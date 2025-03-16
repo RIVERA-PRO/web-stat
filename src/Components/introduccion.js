@@ -1,3 +1,3 @@
-const introduccion = 'https://web.fullweb.online/imagenes/introduccion/introduccion.jpg';
+const introduccion = 'http://cocrearsandra.com.ar/imagenes/introduccion/introduccion.jpg';
 
 export default introduccion;

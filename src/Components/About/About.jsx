@@ -44,7 +44,7 @@ export default function About() {
 
 
 
-            <div className='profileAbout'>
+            {/* <div className='profileAbout'>
                 <img src={about} alt="" />
                 <div className='profileAboutText'>
                     <h2>Sobre Mi</h2>
@@ -61,7 +61,7 @@ export default function About() {
                         document.querySelector('.Contact').scrollIntoView({ behavior: 'smooth' });
                     }}>Contacto</button>
                 </div>
-            </div>
+            </div> */}
 
 
         </div>

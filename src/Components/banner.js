@@ -1,4 +1,4 @@
-const dominio = 'https://web.fullweb.online/imagenes/banner';
+const dominio = 'http://cocrearsandra.com.ar/imagenes/banner';
 
 const banners = [
     `${dominio}/banner.jpg`,

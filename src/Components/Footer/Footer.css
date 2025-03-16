@@ -28,6 +28,10 @@
     color: var(--blanco);
     text-align: center;
 }
+.footerText a{ 
+    color: var(--blanco);
+    text-align: center;
+}
 
 @media (max-width: 700px){
     .FooterContain{

@@ -1,4 +1,4 @@
-const ruta = 'https://web.fullweb.online/imagenes/galeria/';
+const ruta = 'http://cocrearsandra.com.ar/imagenes/galeria/';
 const imagenes = [
     `${ruta}/1.jpg`,
     `${ruta}/2.jpg`,

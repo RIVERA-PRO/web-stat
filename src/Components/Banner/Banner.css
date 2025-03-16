@@ -16,9 +16,22 @@
      
 }
  
-
+.final{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 3%;
+}
+.final img{
+    border-radius: 10px;
+   width: 40%;
+}
  
  @media (max-width: 700px){
+    .final img{
+        border-radius: 10px;
+       width: 100%;
+    }
      
      #swiper_container{
         height: 40vh;

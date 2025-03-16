@@ -33,8 +33,8 @@ export default function Navbar() {
                 <div className='deFLexNavs'>
                     <div className='enlaces'>
                         <Anchor to={`/`} onClick={() => handleClick('.BannerContain')}>Inicio</Anchor>
-                        <Anchor to={`/`} onClick={() => handleClick('.About')}>Sobre mi</Anchor>
-                        <Anchor to={`/`} onClick={() => handleClick('.Itinerario')}>Itinerario</Anchor>
+                        <Anchor to={`/`} onClick={() => handleClick('.final')}>Sobre mi</Anchor>
+                        <Anchor to={`/`} onClick={() => handleClick('#Cronograma')}>Cronograma</Anchor>
                         <Anchor to={`/`} onClick={() => handleClick('.Contact')}>Contacto</Anchor>
                     </div>
 
@@ -57,8 +57,8 @@ export default function Navbar() {
 
                     <div className='enlaces2'>
                         <Anchor to={`/`} onClick={() => handleClick('.BannerContain')}>Inicio</Anchor>
-                        <Anchor to={`/`} onClick={() => handleClick('.About')}>Sobre mi</Anchor>
-                        <Anchor to={`/`} onClick={() => handleClick('.Itinerario')}>Itinerario</Anchor>
+                        <Anchor to={`/`} onClick={() => handleClick('.final')}>Sobre mi</Anchor>
+                        <Anchor to={`/`} onClick={() => handleClick('#Cronograma')}>Cronograma</Anchor>
                         <Anchor to={`/`} onClick={() => handleClick('.Contact')}>Contacto</Anchor>
                     </div>
                 </Modal>

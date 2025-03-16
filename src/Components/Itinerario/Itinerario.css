@@ -8,26 +8,26 @@
 }
 .ItinerarioGrap{
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 2rem;
     overflow: hidden;
     justify-content: center;
     align-items: center;
-    padding: 40px 0;
+    padding: 20px ;
 }
 .ItinerarioCard{
-    width: 34rem;
-    height: 10rem;
+    width: 100%;
     display: flex;
-    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.071);
-    border-radius: 10px;
    background-color: var(--blanco);
    gap: 10px;
    overflow: hidden;
+   padding: 20px;
+   border-bottom: 2px solid #f90eae;
+   text-align: left!important;
   
 }
 .ItinerarioCard:hover{
-    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.262);
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.118);
 }
 
 
@@ -45,11 +45,8 @@
 
 .ItinerarioCard h3{
     color: var(--color1);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 32ch;
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 20px;
 }
 .ItinerarioCard p{
    
@@ -70,7 +67,7 @@
 
 .itinerarioDetaill button{
     color: var(--blanco);
-    background-color: var(--color1);
+    background-color: #f90eae;
     border-radius: 10px;
     border: none;
     padding: 8px;
@@ -138,23 +135,21 @@
     width: 100%;
     border-radius: 0!important;
 }
+#TITLE{
+    font-size: 50px;
+}
 @media (max-width: 700px){
-    .ItinerarioCard{
-        width: 100%;
-        height: 8rem;
-        display: flex;
-        box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.071);
-        border-radius: 10px;
-       background-color: var(--blanco);
-       gap: 10px;
-       overflow: hidden;
-      
+    #TITLE{
+        font-size: 30px;
     }
-
+   
     .ItinerarioCard h3{
        
-        max-width: 20ch;
-        font-size: 15px;
+        font-size: 16px;
+    }
+    .ItinerarioCard p{
+       
+        font-size: 13px;
     }
     .Itinerario{
        
@@ -189,6 +184,10 @@
     height: 30vh;
     width: 100%;
     border-radius: 0;
+}
+.ItinerarioGrap{
+    
+    padding: 10px ;
 }
 
 }
